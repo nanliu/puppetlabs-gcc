@@ -11,13 +11,18 @@
 # Sample Usage:
 #
 class gcc::params{
-  
+
   case $operatingsystem {
     'fedora', 'centos', 'redhat': {
-       $gcc_package = 'gcc'
+      if $operatingsystemrelease >= '6.0'{
+        $gcc_package = [ 'gcc', 'gcc-c++', 'make' ]
+      else {
+        $gcc_package = 'gcc'
+      }
     }
     'ubuntu', 'debian': {
-       $gcc_package = [ 'gcc', 'build-essential' ]
+      $gcc_package = [ 'gcc', 'build-essential' ]
     }
   }
+
 }
