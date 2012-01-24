@@ -1,3 +1,3 @@
 class { 'gcc':
-  ensure => latest,
+  package_ensure => latest,
 }
