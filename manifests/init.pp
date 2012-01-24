@@ -11,12 +11,13 @@
 #
 # Sample Usage:
 #
-class gcc {
+class gcc (
+  $package_name   = hiera('gcc_package_name')
+  $package_ensure = hiera('gcc_package_ensure')
+) {
 
-  include gcc::params
-
-  package { $gcc::params::gcc_package:
-    ensure => installed,
+  package { $package_name:
+    ensure => $package_ensure,
   }
 
 }
