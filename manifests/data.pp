@@ -18,7 +18,7 @@ class gcc::data {
     'redhat': {
       if versioncmp ($::operatingsystemrelease, '6.0') >= 0 {
         $gcc_package_name = [ 'gcc', 'gcc-c++', 'make' ]
-      else {
+      } else {
         $gcc_package_name = 'gcc'
       }
     }
