@@ -12,7 +12,7 @@
 # Sample Usage:
 #
 class gcc (
-  $package_name   = hiera('gcc_package_name')
+  $package_name   = hiera('gcc_package_name'),
   $package_ensure = hiera('gcc_package_ensure')
 ) {
 

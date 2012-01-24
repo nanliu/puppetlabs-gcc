@@ -1,1 +1,3 @@
-include gcc
+class { 'gcc':
+  ensure => latest,
+}
