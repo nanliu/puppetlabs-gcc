@@ -13,7 +13,7 @@
 #
 class gcc (
   $package_name   = hiera('gcc_package_name'),
-  $package_ensure = hiera('gcc_package_ensure')
+  $package_ensure = hiera('gcc_package_ensure', 'installed')
 ) {
 
   package { $package_name:

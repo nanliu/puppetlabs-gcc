@@ -12,8 +12,6 @@
 #
 class gcc::data {
 
-  $gcc_package_ensure = present
-
   case $::osfamily {
     'redhat': {
       if versioncmp ($::operatingsystemrelease, '6.0') >= 0 {
